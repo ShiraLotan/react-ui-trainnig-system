@@ -1,0 +1,18 @@
+
+/*Register User*/
+export const USER_REGISTER = 'USER_REGISTER';
+
+/*Signin user */
+export const USER_SIGNIN_REQUET = 'USER_SIGNIN_REQUET';
+export const USER_SIGNIN_SUCCESS = 'USER_SIGNIN_SUCCESS';
+export const USER_SIGNIN_FALIURE = 'USER_SIGNIN_FALIURE';
+
+/*Get Hero List*/
+export const SET_HERO_LIST_REQUEST = 'SET_HERO_LIST_REQUEST';
+export const SET_HERO_LIST_SUCCESS = 'SET_HERO_LIST_SUCCESS';
+export const SET_HERO_LIST_FALIURE = 'SET_HERO_LIST_FALIURE';
+
+/*Add Hero*/
+export const ADD_HERO_REQUEST = 'ADD_HERO_REQUEST';
+export const ADD_HERO_SUCCESS = 'ADD_HERO_SUCCESS';
+export const ADD_HERO_FALIURE = 'ADD_HERO_FALIURE';
