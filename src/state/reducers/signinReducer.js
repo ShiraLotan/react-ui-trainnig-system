@@ -2,7 +2,10 @@ import {
   USER_REGISTER,
   USER_SIGNIN_REQUET,
   USER_SIGNIN_SUCCESS,
-  USER_SIGNIN_FALIURE
+  USER_SIGNIN_FALIURE,
+  USER_LOGOUT_REQUET,
+  USER_LOGOUT_SUCCESS,
+  USER_LOGOUT_FALIURE
 } from '../../consts';
 
 const initialState = {
@@ -14,7 +17,7 @@ const initialState = {
 }
 
 function signinReducer(state = initialState, action) {
-  debugger
+
   switch (action.type) {
     case USER_REGISTER:
       return {
@@ -32,9 +35,28 @@ function signinReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        /**Add to state */
+        name: action.data.name,
+        email: action.data.email,
+        isSignin:true,
+
       }
       case USER_SIGNIN_FALIURE:
+      return {
+        ...state,
+        isLoading: false,
+      }
+      case USER_LOGOUT_REQUET:
+      return {
+        ...state,
+        isLoading: true
+      }
+      case USER_LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        isSignin: false
+      }
+      case USER_LOGOUT_FALIURE:
       return {
         ...state,
         isLoading: false,

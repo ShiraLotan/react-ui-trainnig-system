@@ -27,8 +27,8 @@ const getHerosByTrainer = (email) => {
       const data = await res.json();
       dispatch(setHerosListSuccess(data));
     } catch (error) {
-      console.log(error) //ADD ERROR HANDLING
       dispatch(setHerosListFaliure());
+      throw new Error('Could not fetch please try again later');
     }
   }
 }

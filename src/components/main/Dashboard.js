@@ -1,5 +1,4 @@
 import React from 'react';
-import Hero from './Hero';
 import Trainer from './Trainer';
 
 function Dashboard({location}) {

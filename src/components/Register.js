@@ -5,13 +5,15 @@ import { useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import Form from 'react-bootstrap/Form';
 import {signUser} from '../state/action';
+import '../../src/stylesFolder/register.scss';
 
-function Register({updateUserDetails, stateSignin}) {
+function Register({updateUserDetails}) {
     let history = useHistory();
 
     const { register, handleSubmit, errors } = useForm();
     const [errorMessage, setErrorMessage]= useState(false);
 
+    
     const onSubmit = async data => {
       const settings = {
         method: 'POST',
@@ -25,6 +27,8 @@ function Register({updateUserDetails, stateSignin}) {
       try {
           const fetchResponse = await fetch(`http://localhost:3001/register`, settings);
           const data = await fetchResponse.json();
+
+          
           //Server side doesnt change login to true
           if(data.message==='Already exist'){
             setErrorMessage(true);
@@ -33,14 +37,14 @@ function Register({updateUserDetails, stateSignin}) {
           history.push("/dashboard", {name: data.name, email: data.email});
         }
       } catch (e) {
-          return e;
+        throw new Error('Could not fetch please try again later');
       } 
 
     };
   
   return (
     <div className="Register">
-           <Form onSubmit={handleSubmit(onSubmit)}>
+           <Form className="register-form" onSubmit={handleSubmit(onSubmit)}>
 
            <Form.Group >
                 <Form.Label>Name</Form.Label>

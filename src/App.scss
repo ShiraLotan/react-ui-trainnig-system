@@ -1,6 +1,24 @@
 .App {
   text-align: center;
+  nav{
+    background: rgb(58, 57, 57);
+    ul{
+      list-style-type: none;
+      display: flex;
+    padding: 10px;
+    li{
+      margin: 5px;
+      a{
+        color: #fff;
+        &:hover{
+          color: antiquewhite;
+        }
+      }
+    }
+    }
+  }
 }
+
 
 .App-logo {
   height: 40vmin;

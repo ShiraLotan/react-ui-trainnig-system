@@ -6,7 +6,6 @@ import {
 
 const loginUser = (data) => {
   return async function (dispatch) {
-    debugger
     dispatch(userSigninRequest());
     const settings = {
       method: 'POST',
@@ -19,10 +18,17 @@ const loginUser = (data) => {
     try {
       const res = await fetch(`http://localhost:3001/login`, settings);
       const data = await res.json();
-      dispatch(userSigninRequestSucces(data));
+      if (!data?.message) {
+        dispatch(userSigninRequestSucces(data));
+        return data;
+      } else {
+        //Not a match
+        return false;
+      }
     } catch (error) {
-      console.log(error) //ADD ERROR HANDLING
       dispatch(userSigninRequestFaliure());
+      throw new Error('Could not fetch please try again later');
+
     }
   }
 }

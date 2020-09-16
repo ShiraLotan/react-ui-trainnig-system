@@ -20,8 +20,8 @@ const addHero = (data) => {
       const data = await res.json();
       dispatch(addHeroRequestSuccess(data));
     } catch (error) {
-      console.log(error) //ADD ERROR HANDLING
       dispatch(addHeroRequestFaliure());
+      throw new Error('Could not fetch please try again later');
     }
   }
 }

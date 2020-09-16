@@ -1,0 +1,18 @@
+.SinglHero {
+  margin: 10px;
+  .hero-details {
+    ul {
+      list-style-type: none;
+      li {
+        text-align: left;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        span {
+          font-size: 14px;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

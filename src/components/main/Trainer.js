@@ -5,7 +5,7 @@ import HerosList from '../main/HerosList';
 import { connect } from 'react-redux';
 import getHerosByTrainer from '../../state/thunk/getAllHeros';
 import AddHero from './AddHero';
-
+import '../../../src/stylesFolder/trainer.scss';
 
 function Trainer({getHeroList, userEmail, list}) {
 
@@ -15,12 +15,12 @@ function Trainer({getHeroList, userEmail, list}) {
 
   return (
     <div className="Trainer">
-        <Tabs defaultActiveKey="add" id="uncontrolled-tab-example">
+        <Tabs className="trainer-nav-bar" defaultActiveKey="add" id="uncontrolled-tab-example">
           <Tab eventKey="add" title="Add a hero">
             <AddHero/>
           </Tab>
           <Tab eventKey="all" title="All heros">
-          <HerosList list={list}/>0
+          <HerosList list={list}/>
           </Tab>
         </Tabs>
     </div>

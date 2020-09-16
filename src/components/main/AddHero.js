@@ -4,20 +4,19 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import addHero from '../../state/thunk/addHero';
 import { connect } from 'react-redux';
+import '../../../src/stylesFolder/addHero.scss';
 
 
 function AddHero({addHeroToList, email}) {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = async (data) => {
     data.email = email
-    console.log(data)
     addHeroToList(data)
   };
 
   return (
     <div className="AddHero">
-      {JSON.stringify(email)}
-     <Form onSubmit={handleSubmit(onSubmit)}>
+     <Form className="add-hero-form" onSubmit={handleSubmit(onSubmit)}>
 
         <Form.Group >
             <Form.Label>Name</Form.Label>
