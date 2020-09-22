@@ -18,7 +18,7 @@ const updateHeroPower = (id) => {
     try {
       const res = await fetch(`http://localhost:3001/hero/start`, settings);
       const data = await res.json();
-      dispatch(updateHeroPowerRequestSucces());
+      dispatch(updateHeroPowerRequestSucces(data));
 
      
     } catch (error) {

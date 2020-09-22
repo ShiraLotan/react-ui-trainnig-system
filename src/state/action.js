@@ -106,10 +106,10 @@ export function updateHeroPowerRequest() {
   }
 }
 
-export function updateHeroPowerRequestSucces(id) {
+export function updateHeroPowerRequestSucces(data) {
   return {
     type: UPDATE_HERO_POWER_SUCCESS,
-    id
+    data
   }
 }
 
